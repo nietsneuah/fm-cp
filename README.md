@@ -26,13 +26,24 @@ FM Clipboard  ──→  Decompile  ──→  Plain Text  ──→  pbcopy (pa
 
 ## Install
 
+### Option A: pip install (quickest)
+
+```bash
+pip install "fm-cp[clipboard] @ git+https://github.com/nietsneuah/fm-cp.git"
+```
+
+This installs `fm-cp` into your current Python environment with clipboard support.
+Drop `[clipboard]` if you only need file I/O.
+
+### Option B: Isolated install (recommended)
+
 ```bash
 git clone https://github.com/nietsneuah/fm-cp.git
 cd fm-cp
 bash install.sh
 ```
 
-That's it. The installer:
+The installer:
 - Creates an isolated Python virtual environment (`~/.fm-cp/venv`)
 - Installs all dependencies (including PyObjC for clipboard on macOS)
 - Links `fm-cp` command to `/usr/local/bin`
