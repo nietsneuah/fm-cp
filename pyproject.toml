@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fm-cp"
+version = "0.3.2"
+description = "FileMaker Script Step Composer & Decompiler — bidirectional plain text ↔ FM XML clipboard"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.9"
+authors = [
+    {name = "Doug Widmer"}
+]
+keywords = ["filemaker", "xml", "clipboard", "scripting", "development"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Environment :: MacOS X",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: MacOS",
+    "Programming Language :: Python :: 3",
+    "Topic :: Software Development :: Code Generators",
+]
+
+[project.urls]
+Homepage = "https://github.com/nietsneuah/fm-cp"
+Repository = "https://github.com/nietsneuah/fm-cp"
+Issues = "https://github.com/nietsneuah/fm-cp/issues"
+
+[project.optional-dependencies]
+clipboard = ["pyobjc-framework-Cocoa>=9.0"]
+
+[project.scripts]
+fm-cp = "fm_cp.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
