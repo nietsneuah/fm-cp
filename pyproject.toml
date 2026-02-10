@@ -8,7 +8,7 @@ version = "0.3.2"
 description = "FileMaker Script Step Composer & Decompiler — bidirectional plain text ↔ FM XML clipboard"
 readme = "README.md"
 license = {text = "MIT"}
-requires-python = ">=3.9"
+requires-python = ">=3.8"
 authors = [
     {name = "Doug Widmer"}
 ]

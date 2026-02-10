@@ -125,7 +125,7 @@ Unrecognized steps display as: `StepName [id=N]`
 
 ## Requirements
 
-- Python 3.9+
+- Python 3.8+
 - macOS for clipboard features (PyObjC)
 - File I/O works on any platform
 

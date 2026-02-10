@@ -22,7 +22,7 @@ if command -v python3 &>/dev/null; then
     PY_VER=$($PY --version 2>&1)
     echo "  Python: $PY_VER ($PY)"
 else
-    echo "  ✗ Python 3 not found. Install Python 3.9+ first."
+    echo "  ✗ Python 3 not found. Install Python 3.8+ first."
     exit 1
 fi
 
