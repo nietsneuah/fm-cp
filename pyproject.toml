@@ -10,7 +10,7 @@ readme = "README.md"
 license = {text = "MIT"}
 requires-python = ">=3.8"
 authors = [
-    {name = "Doug Widmer"}
+    {name = "Doug Hauenstein"}
 ]
 keywords = ["filemaker", "xml", "clipboard", "scripting", "development"]
 classifiers = [
