@@ -62,19 +62,32 @@ rm -rf ~/.fm-cp /usr/local/bin/fm-cp
 
 FM_CP auto-detects input format. One command, no subcommands needed.
 
+### With FileMaker (clipboard workflows, macOS)
+
+Clipboard compose loads XML as a FileMaker pasteboard type — it will only paste
+into FileMaker's Script Workspace. It won't paste as text into other apps.
+
 ```bash
-# Clipboard workflows (macOS)
 fm-cp -c                  # Auto-detect clipboard → compose or decompile
+fm-cp script.txt          # Compose plain text → FM clipboard (Cmd+V into FM)
 fm-cp dump                # Show raw FM XML from clipboard
+```
 
-# File workflows (any platform)
-fm-cp script.txt              # Compose plain text → FM clipboard
-fm-cp script.xml              # Decompile FM XML → readable text
+### Without FileMaker (file I/O, any platform)
 
-# Output to file instead of clipboard
-fm-cp script.txt -o out.xml   # Compose → save XML
-fm-cp script.xml -o out.txt   # Decompile → save text
-fm-cp dump -o raw.xml          # Dump clipboard → file
+Use `-o` to write output to a file instead of the clipboard.
+
+```bash
+fm-cp script.txt -o out.xml   # Compose → save XML file
+fm-cp script.xml -o out.txt   # Decompile → save plain text
+fm-cp dump -o raw.xml         # Dump clipboard XML → file
+```
+
+### Decompile (FM → plain text)
+
+```bash
+fm-cp -c                      # Decompile FM clipboard → plain text (auto-copied)
+fm-cp script.xml              # Decompile FM XML file → readable text
 ```
 
 ## Plain Text Format
@@ -133,6 +146,8 @@ Unrecognized steps display as: `StepName [id=N]`
 - **Disabled steps**: Decompile shows disabled steps with `//` prefix.
 
 - **Clipboard format**: FM uses custom pasteboard type `XMSS` (script steps) and `XMSC` (single step).
+  After compose, the clipboard contains only this FM type — it won't paste as text into other apps.
+  Use `-o` to save XML to a file if you don't have FileMaker on this machine.
 
 ## Requirements
 
